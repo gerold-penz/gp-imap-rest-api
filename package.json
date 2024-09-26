@@ -1,0 +1,51 @@
+{
+  "name": "bun.bun-imap-rest-api",
+  "version": "0.0.6",
+  "author": {
+    "name": "Gerold Penz",
+    "email": "gerold@gp-softwaretechnik.at",
+    "url": "https://gp-softwaretechnik.at/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerold-penz/bun-imap-rest-api.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/gerold-penz/bun-imap-rest-api/issues"
+  },
+  "description": "IMAP REST API",
+  "keywords": [
+    "Bun",
+    "Bun.js",
+    "TypeScript",
+    "Imap",
+    "Rest",
+    "Api",
+    "Server",
+    "Docker"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "bun run src/index.ts --host=0.0.0.0 --port=8080 --strictPort --watch",
+    "increment_package_version": "npm version patch --no-git-tag-version",
+    "bun:build": "bun build src/index.ts --outdir=dist --target=bun",
+    "tsc:dts": "bunx tsc --project ./tsconfigDts.json --declaration",
+    "build": "bun run increment_package_version && bun run bun:build && bun run tsc:dts",
+    "docker:build": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/bun-imap-rest-api:latest --push ."
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ]
+}
+
+
