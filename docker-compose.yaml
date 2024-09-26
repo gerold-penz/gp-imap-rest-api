@@ -1,0 +1,8 @@
+services:
+
+  bun-image-rest-api:
+
+    image: ghcr.io/bun-image-rest-api/bun-image-rest-api
+
+    ports:
+      - "3000:3000"
