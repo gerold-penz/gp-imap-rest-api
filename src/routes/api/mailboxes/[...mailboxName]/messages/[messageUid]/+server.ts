@@ -6,10 +6,11 @@ import { StatusCodes } from "http-status-codes"
 import { parseHeaders } from "$lib/tools"
 
 
-// Get Message uids
+// Get Messages
 export const GET: RequestHandler = async ({request, params}) => {
     const {headers} = request
     const mailboxName = params.mailboxName
+    const messageUid: number = Number(params.messageUid)
 
     // Parse headers
     const {
@@ -26,21 +27,23 @@ export const GET: RequestHandler = async ({request, params}) => {
         })
     }
 
-    // Get message uids
-    try {
-        const uids: number[] = await getMessageUids(imapConfig as Config, mailboxName)
-        return json({
-            success: true,
-            uids,
-            total: uids.length
-        })
-    } catch (error: any) {
-        return json({
-            success: false,
-            error: true,
-            error_code: StatusCodes.INTERNAL_SERVER_ERROR,
-            error_message: error.toString()
-        })
-    }
+    // Get message
+    // try {
+    //     const uids: number[] = await getMessage(imapConfig as Config, mailboxName, messageUid)
+    //     return json({
+    //         success: true,
+    //         uids,
+    //         total: uids.length
+    //     })
+    // } catch (error: any) {
+    //     return json({
+    //         success: false,
+    //         error: true,
+    //         error_code: StatusCodes.INTERNAL_SERVER_ERROR,
+    //         error_message: error.toString()
+    //     })
+    // }
+
+    return json({success: true})
 
 }

@@ -1,0 +1,13 @@
+### GET request to example server
+GET http://localhost:8080/api/mailboxes/INBOX/attachments/17563
+X-Imap-Host: {{IMAP_HOST}}
+X-Imap-Port: {{IMAP_PORT}}
+X-Imap-Tls: {{IMAP_TLS}}
+X-Imap-User: {{IMAP_USER}}
+X-Imap-Password: {{IMAP_PASSWORD}}
+
+#    17563,
+#    17670,
+#    17684,
+#    17685,
+#    17686

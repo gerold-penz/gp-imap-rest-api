@@ -45,7 +45,39 @@ export async function getMailboxes(imapConfig: Config) {
     } finally {
         imap.end()
     }
+}
 
+
+export async function getMessageUids(imapConfig: Config, mailboxName: string): Promise<number[]> {
+    console.debug(`getMessageUids(${mailboxName})`)
+    const imap = await getImapConnection(imapConfig)
+    return new Promise((resolve, reject) => {
+
+        // Open mailbox
+        imap.openBox(mailboxName, true, (error, x) => {
+            console.debug(`imap.openBox(${mailboxName})`)
+
+            if (error) {
+                imap.destroy()
+                reject(error)
+                return
+            }
+
+            // Search all messages
+            imap.search(["ALL"], (error, uids) => {
+                console.debug(`imap.search(ALL)`)
+                if (error) {
+                    imap.destroy()
+                    reject(error)
+                    return
+                }
+                resolve(uids)
+                imap.end()
+            })
+
+        })
+
+    })
 }
 
 
