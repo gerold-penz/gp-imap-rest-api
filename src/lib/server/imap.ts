@@ -1,22 +1,23 @@
 import Connection, { type Config } from "node-imap"
+import type { MailboxInfo } from "$lib/interfaces"
 
 
 async function getImapConnection(imapConfig: Config): Promise<Connection> {
     return new Promise(async (resolve, reject) => {
         const connection = new Connection(imapConfig)
 
-        connection.once("ready", () => {
+        connection.on("ready", () => {
             console.debug("Imap ready")
             resolve(connection)
         })
 
-        connection.once('error', function (error) {
+        connection.on("error", function (error) {
             console.error(error)
             connection.destroy()
             reject(error)
         })
 
-        connection.once('end', function () {
+        connection.on("end", function () {
             console.debug('Imap connection ended')
             connection.destroy()
         })
@@ -26,34 +27,44 @@ async function getImapConnection(imapConfig: Config): Promise<Connection> {
 }
 
 
-export async function getMailboxNames(imapConfig: Config) {
+export async function getMailboxes(imapConfig: Config) {
     const imap = await getImapConnection(imapConfig)
-    let mailboxNames: string[]
-    return new Promise((resolve, reject) => {
-        imap.getBoxes((error, mailboxes: Connection.MailBoxes) => {
-            if (error) {
-                imap.end()
-                reject(error)
-                return
-            }
-            mailboxNames = flattenMailboxNames(mailboxes)
-            imap.end()
-            resolve(mailboxNames)
+    try {
+        let mailboxInfos: MailboxInfo[]
+        return new Promise((resolve, reject) => {
+            imap.getBoxes((error, mailboxes: Connection.MailBoxes) => {
+                if (error) {
+                    imap.destroy()
+                    reject(error)
+                    return
+                }
+                mailboxInfos = flattenMailboxes(mailboxes)
+                resolve(mailboxInfos)
+            })
         })
-    })
+    } finally {
+        imap.end()
+    }
+
 }
 
 
-function flattenMailboxNames(mailboxes: Connection.MailBoxes, parentMailboxName: string = ""): string[] {
-    let mailboxNames: string[] = []
+function flattenMailboxes(mailboxes: Connection.MailBoxes, parentMailbox?: MailboxInfo): MailboxInfo[] {
+    let mailboxInfos: MailboxInfo[] = []
     for (let [mailboxName, mailbox] of Object.entries(mailboxes)) {
-        if (parentMailboxName.length) {
-            mailboxName = parentMailboxName + mailbox.delimiter + mailboxName
+        if (parentMailbox?.name) {
+            mailboxName = parentMailbox.name + mailbox.delimiter + mailboxName
         }
-        mailboxNames.push(mailboxName)
+        const mailboxInfo = {
+            name: mailboxName,
+            attribs: mailbox.attribs
+        }
+        mailboxInfos.push(mailboxInfo)
         if (mailbox.children) {
-            mailboxNames = mailboxNames.concat(flattenMailboxNames(mailbox.children, mailboxName))
+            mailboxInfos = mailboxInfos.concat(flattenMailboxes(mailbox.children, mailboxInfo))
         }
     }
-    return mailboxNames.toSorted()
+    return mailboxInfos.toSorted((a, b) => {
+        return a.name.localeCompare(b.name)
+    })
 }
