@@ -12,10 +12,12 @@
 		"url": "git+https://github.com/gerold-penz/bun-imap-rest-api.git"
 	},
 	"devDependencies": {
+		"@picocss/pico": "^2.0.6",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
 		"@types/bun": "latest",
+		"sass": "^1.79.3",
 		"svelte": "^5.0.0-next.1",
 		"svelte-adapter-bun": "^0.5.2",
 		"svelte-check": "^4.0.0",
@@ -42,7 +44,7 @@
 		"increment_package_version": "npm version patch --no-git-tag-version",
 		"vite:build": "bun --bun vite build",
 		"build": "bun run increment_package_version && bun run vite:build",
-    "preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
+		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
 		"docker:build": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/bun-imap-rest-api:latest --push .",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"

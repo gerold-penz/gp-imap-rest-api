@@ -1,0 +1,9 @@
+//@use "@picocss/pico/scss/pico";
+
+@use "@picocss/pico/scss/pico" with (
+  $enable-semantic-container: true,
+  $semantic-root-element: "#root",
+  $theme-color: "azure"
+);
+
+
