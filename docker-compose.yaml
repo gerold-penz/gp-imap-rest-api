@@ -2,7 +2,10 @@ services:
 
   bun-image-rest-api:
 
-    image: ghcr.io/bun-image-rest-api/bun-image-rest-api
+    image: ghcr.io/gerold-penz/bun-imap-rest-api
+
+    environment:
+      TZ: "Europe/Vienna"
 
     ports:
       - "3000:3000"

@@ -1,6 +1,6 @@
 {
 	"name": "bun-imap-rest-api",
-	"version": "0.0.7",
+	"version": "0.0.9",
 	"private": false,
 	"author": {
 		"name": "Gerold Penz",

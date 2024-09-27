@@ -4,7 +4,6 @@ import { join } from "node:path"
 
 
 $.cwd(join(__dirname, ".."))
-$.env({FORCE_COLOR: "1"})
 
 let exitCode = 1
 try {
