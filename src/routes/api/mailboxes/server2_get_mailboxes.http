@@ -1,4 +1,4 @@
-GET https://bun-imap-rest-api.gerold-penz.at/api/mailboxes/
+GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/
 X-Imap-Host: {{IMAP_HOST}}
 X-Imap-Port: {{IMAP_PORT}}
 X-Imap-Tls: {{IMAP_TLS}}

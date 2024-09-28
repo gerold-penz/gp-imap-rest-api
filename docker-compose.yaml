@@ -1,11 +1,5 @@
 services:
-
-  bun-image-rest-api:
-
-    image: ghcr.io/gerold-penz/bun-imap-rest-api
-
-    environment:
-      TZ: "Europe/Vienna"
-
+  gp-imap-rest-api:
+    image: ghcr.io/gerold-penz/gp-imap-rest-api
     ports:
       - "3000:3000"

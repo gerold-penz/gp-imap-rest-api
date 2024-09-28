@@ -10,13 +10,13 @@
     <nav>
       <ul>
         <li>
-          <strong>IMAP REST API Server</strong>
-          <small>by GP-Softwaretechnik</small>
+          <strong>Gp-Imap-Rest-Api Server</strong>
+          <small>by <a href="https://gp-softwaretechnik.at/" target="_blank">GP-Softwaretechnik</a></small>
         </li>
       </ul>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="https://github.com/gerold-penz/bun-imap-rest-api" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/gerold-penz/gp-imap-rest-api" target="_blank">GitHub</a></li>
       </ul>
     </nav>
   </article>
@@ -45,5 +45,8 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+  }
+  main {
+    margin-bottom: 3em;
   }
 </style>
