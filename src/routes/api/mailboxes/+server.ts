@@ -4,6 +4,7 @@ import { StatusCodes } from "http-status-codes"
 import { parseHeaders } from "$lib/tools"
 import type { ImapFlowOptions } from "imapflow"
 import { getMailboxes } from "$lib/server/imap"
+import type { MailboxInfo } from "$lib/interfaces"
 
 
 // Get Mailbox-Names
@@ -27,7 +28,7 @@ export const GET: RequestHandler = async ({request}) => {
 
     // Get mailboxes
     try {
-        const mailboxes = await getMailboxes(imapOptions as ImapFlowOptions)
+        const mailboxes: MailboxInfo[] = await getMailboxes(imapOptions as ImapFlowOptions)
         return json({
             success: true,
             mailboxes

@@ -4,4 +4,4 @@ X-Imap-Host: {{IMAP_HOST}}
 X-Imap-Port: {{IMAP_PORT}}
 X-Imap-Secure: {{IMAP_SECURE}}
 X-Imap-User: {{IMAP_USER}}
-X-Imap-Pass: {{IMAP_PASSWORD}}
+X-Imap-Pass: {{IMAP_PASS}}

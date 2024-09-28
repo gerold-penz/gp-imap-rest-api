@@ -1,4 +1,6 @@
-export interface MailboxInfo {
-    name: string
-    attribs: string[];
+import type { ListResponse } from "imapflow"
+
+
+export interface MailboxInfo extends Omit<ListResponse, "flags"> {
+    flags: string[];
 }
