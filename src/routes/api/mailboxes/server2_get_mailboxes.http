@@ -1,6 +1,6 @@
 GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/
 X-Imap-Host: {{IMAP_HOST}}
 X-Imap-Port: {{IMAP_PORT}}
-X-Imap-Tls: {{IMAP_TLS}}
+X-Imap-Secure: {{IMAP_SECURE}}
 X-Imap-User: {{IMAP_USER}}
-X-Imap-Password: {{IMAP_PASSWORD}}
+X-Imap-Pass: {{IMAP_PASSWORD}}

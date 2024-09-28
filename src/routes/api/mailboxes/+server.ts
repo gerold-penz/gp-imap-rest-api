@@ -1,9 +1,9 @@
 import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
-import { getMailboxes } from "$lib/server/imap"
-import type { Config } from "node-imap"
 import { StatusCodes } from "http-status-codes"
 import { parseHeaders } from "$lib/tools"
+import type { ImapFlowOptions } from "imapflow"
+import { getMailboxes } from "$lib/server/imap"
 
 
 // Get Mailbox-Names
@@ -12,7 +12,7 @@ export const GET: RequestHandler = async ({request}) => {
 
     // Parse headers
     const {
-        data: imapConfig,
+        data: imapOptions,
         error: parseError
     } = parseHeaders(headers)
     if (parseError) {
@@ -27,7 +27,7 @@ export const GET: RequestHandler = async ({request}) => {
 
     // Get mailboxes
     try {
-        const mailboxes = await getMailboxes(imapConfig as Config)
+        const mailboxes = await getMailboxes(imapOptions as ImapFlowOptions)
         return json({
             success: true,
             mailboxes

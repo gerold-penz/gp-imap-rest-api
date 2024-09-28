@@ -63,7 +63,37 @@
   <h3>Headers</h3>
 
   <p>
-    Beschreibungen aus xxx übernommen.
+    Beschreibungen aus der <a href="https://imapflow.com/module-imapflow-ImapFlow.html" target="_blank">Dokumentation von ImapFlow</a> übernommen.
+  </p>
+
+  <h4><code>X-Imap-Host</code></h4>
+  <p>
+    Hostname of the IMAP server
+  </p>
+
+  <h4><code>X-Imap-Port</code></h4>
+  <p>
+    Port number for the IMAP server
+  </p>
+
+  <h4><code>X-Imap-Secure</code></h4>
+  <p>
+    <code>true|false</code>
+  </p>
+  <p>
+    optional, Standard: false
+  </p>
+  <p>
+    Should the connection be established over TLS.
+    If "false" then connection is upgraded to TLS using STARTTLS extension before authentication.
+  </p>
+
+  <h4><code>X-Imap-Servername</code></h4>
+  <p>
+    optional
+  </p>
+  <p>
+    Servername for SNI (or when host is set to an IP address).
   </p>
 
   <h4><code>X-Imap-User</code></h4>
@@ -73,28 +103,34 @@
 
   <h4><code>X-Imap-Password</code></h4>
   <p>
+    optional
+  </p>
+  <p>
     Password for plain-text authentication.
   </p>
 
-  <!--    /** Base64-encoded OAuth token for OAuth authentication for servers that support it (See Andris Reinman's xoauth.js module to help generate this string). */-->
-  <!--    xoauth: zfd.text().nullable(),-->
-  <!--    /** Base64-encoded OAuth2 token for The SASL XOAUTH2 Mechanism for servers that support it (See Andris Reinman's xoauth2 module to help generate this string). */-->
-  <!--    xoauth2: zfd.text().nullable(),-->
-  <!--    /** Hostname or IP address of the IMAP server. Default: "localhost" */-->
-  <!--    host: zfd.text().nullable(),-->
-  <!--    /** Port number of the IMAP server. Default: 143 */-->
-  <!--    port: zfd.numeric().nullable(),-->
-  <!--    /** Perform implicit TLS connection? Default: false */-->
-  <!--    tls: z.boolean().nullable(),-->
-  <!--    /** Set to 'always' to always attempt connection upgrades via STARTTLS, 'required' only if upgrading is required, or 'never' to never attempt upgrading. Default: 'never' */-->
-  <!--    autotls: zfd.text(z.enum(["always", "required", "never"])).nullable(),-->
-  <!--    /** Number of milliseconds to wait for a connection to be established. Default: 10000 */-->
-  <!--    connTimeout: zfd.numeric().nullable(),-->
-  <!--    /** Number of milliseconds to wait to be authenticated after a connection has been established. Default: 5000 */-->
-  <!--    authTimeout: zfd.numeric().nullable(),-->
+  <h4><code>X-Imap-Access-Token</code></h4>
+  <p>
+    optional
+  </p>
+  <p>
+    OAuth2 Access Token, if using OAuth2 authentication.
+  </p>
 
+  <h4><code>X-Imap-XXX</code></h4>
+  <p>
+    XXX
+  </p>
 
-  [ToDo: Beispiel]
+  <h4><code>X-Imap-XXX</code></h4>
+  <p>
+    XXX
+  </p>
+
+  <h4><code>X-Imap-XXX</code></h4>
+  <p>
+    XXX
+  </p>
 
 
 </article>
