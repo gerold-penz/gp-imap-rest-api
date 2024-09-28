@@ -33,7 +33,7 @@
 	"bugs": {
 		"url": "https://github.com/gerold-penz/bun-imap-rest-api/issues"
 	},
-	"description": "IMAP REST API",
+	"description": "IMAP REST API with Bun und SvelteKit",
 	"keywords": [
 		"Bun",
 		"Bun.js",
@@ -42,7 +42,8 @@
 		"Rest",
 		"Api",
 		"Server",
-		"Docker"
+		"Docker",
+		"SvelteKit"
 	],
 	"license": "MIT",
 	"scripts": {
@@ -51,7 +52,7 @@
 		"build:vite": "bun --bun vite build",
 		"build": "bun run increment_package_version && bun run build:vite",
 		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
-		"build:docker": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/bun-imap-rest-api:latest --push .",
+		"deploy": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/bun-imap-rest-api:latest --push .",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
