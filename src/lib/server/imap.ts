@@ -79,11 +79,7 @@ export async function getMessage(options: ImapFlowOptions, mailboxName: string, 
         // }
 
 
-        simpleParser(fetchMessage.source, (err, mail) => {
-            console.log("--------------------")
-            console.log(mail)
-            console.log("--------------------")
-        })
+        // const parsedMessage = await simpleParser(fetchMessage.source.toString(), {emitClose})
 
 
         let message: FetchMessage = {
