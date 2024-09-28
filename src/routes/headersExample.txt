@@ -1,0 +1,5 @@
+X-Imap-Host: imap.example.com
+X-Imap-Port: 993
+X-Imap-Secure: true
+X-Imap-User: exampleuser@example.com
+X-Imap-Pass: examplePassword123

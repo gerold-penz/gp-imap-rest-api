@@ -1,3 +1,8 @@
+<script context="module" lang="ts">
+    declare const PACKAGE: {version: string}  // Variablen aus package.json (über vite.config.ts eingefügt)
+</script>
+
+
 <script lang="ts">
     import "../app.scss"
 </script>
@@ -17,6 +22,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="https://github.com/gerold-penz/gp-imap-rest-api" target="_blank">GitHub</a></li>
+        <li><small>Version: {PACKAGE.version}</small></li>
       </ul>
     </nav>
   </article>
@@ -46,6 +52,7 @@
       padding-bottom: 0;
     }
   }
+
   main {
     margin-bottom: 3em;
   }

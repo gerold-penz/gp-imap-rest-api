@@ -5,3 +5,12 @@ X-Imap-Port: {{IMAP_PORT}}
 X-Imap-Secure: {{IMAP_SECURE}}
 X-Imap-User: {{IMAP_USER}}
 X-Imap-Pass: {{IMAP_PASS}}
+
+
+#  "uids": [
+#    17563,
+#    17670,
+#    17684,
+#    17685,
+#    17686
+#  ],

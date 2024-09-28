@@ -1,12 +1,12 @@
 import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
-import { getMessageUids } from "$lib/server/imap"
-import type { Config } from "node-imap"
 import { StatusCodes } from "http-status-codes"
 import { parseHeaders } from "$lib/tools"
+import type { ImapFlowOptions } from "imapflow"
+import { getMessage } from "$lib/server/imap"
 
 
-// Get Messages
+// Get Message uids
 export const GET: RequestHandler = async ({request, params}) => {
     const {headers} = request
     const mailboxName = params.mailboxName
@@ -14,7 +14,7 @@ export const GET: RequestHandler = async ({request, params}) => {
 
     // Parse headers
     const {
-        data: imapConfig,
+        data: imapOptions,
         error: parseError
     } = parseHeaders(headers)
     if (parseError) {
@@ -28,22 +28,19 @@ export const GET: RequestHandler = async ({request, params}) => {
     }
 
     // Get message
-    // try {
-    //     const uids: number[] = await getMessage(imapConfig as Config, mailboxName, messageUid)
-    //     return json({
-    //         success: true,
-    //         uids,
-    //         total: uids.length
-    //     })
-    // } catch (error: any) {
-    //     return json({
-    //         success: false,
-    //         error: true,
-    //         error_code: StatusCodes.INTERNAL_SERVER_ERROR,
-    //         error_message: error.toString()
-    //     })
-    // }
-
-    return json({success: true})
+    try {
+        const message = await getMessage(imapOptions as ImapFlowOptions, mailboxName, messageUid)
+        return json({
+            success: true,
+            message,
+        })
+    } catch (error: any) {
+        return json({
+            success: false,
+            error: true,
+            error_code: StatusCodes.INTERNAL_SERVER_ERROR,
+            error_message: error.toString()
+        })
+    }
 
 }

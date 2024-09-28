@@ -1,5 +1,6 @@
 <script lang="ts">
     import dockerComposeContent from "../../docker-compose.yaml?raw"
+    import headersExample from "./headersExample.txt?raw"
 </script>
 
 
@@ -13,8 +14,8 @@
   </hgroup>
 
   <p>
-    Dieses Docker-Compose-File genügt, um den Server zu starten.
-    Es werden keine Daten zwischengespeichert.
+    This Docker Compose file is all you need to start the server.
+    No data is saved.
   </p>
 
   <pre><code>{ dockerComposeContent }</code></pre>
@@ -25,15 +26,15 @@
 <!-- Datenspeicherung BEGIN -->
 <article>
   <hgroup>
-    <h2>Datenspeicherung</h2>
+    <h2>Data storage</h2>
     <p>
-      gibt es nicht
+      does not exist
     </p>
   </hgroup>
 
   <p>
-    Es werden <strong>keine Daten gespeichert</strong>.
-    Jeder Request muss die Zugangsdaten zum IMAP-Server im Header enthalten.
+    <strong>No data is saved</strong>.
+    Each request must contain the credentials to the IMAP server in the header.
   </p>
 </article>
 <!-- Datenspeicherung END -->
@@ -45,25 +46,24 @@
   <hgroup>
     <h2>HTTP Header</h2>
     <p>
-      mit IMAP-Zugangsdaten
+      with IMAP credentials
     </p>
   </hgroup>
 
   <p>
-    Jeder HTTP-Request an den "Gp-Imap-Rest-Api Server" muss die Zugangsdaten zum
-    IMAP-Server enthalten. Damit diese nicht im Klartext über die URL übergeben
-    werden, müssen diese Zugangsdaten im HTTP-Header übermittelt werden.
-    Nutzt man HTTPS statt HTTP, wird der Header verschlüsselt zum Server übertragen.
+    Every HTTP request to the “Gp-Imap-Rest-Api Server” must contain the access data to the IMAP server.
+    To ensure that this is not transferred in plain text via the URL, this access data must be transferred in the HTTP header.
+    If HTTPS is used instead of HTTP, the header is transmitted to the server in encrypted form.
   </p>
   <p>
-    Die dafür notwendigen Header-Einträge beginnen alle mit <code>X-Imap-</code>.
+    The header entries required for this all start with <code>X-Imap-</code>.
   </p>
 
 
   <h3>Headers</h3>
 
   <p>
-    Beschreibungen aus der <a href="https://imapflow.com/module-imapflow-ImapFlow.html" target="_blank">Dokumentation von ImapFlow</a> übernommen.
+    Descriptions taken from the <a href=“https://imapflow.com/module-imapflow-ImapFlow.html” target=“_blank”>documentation of ImapFlow</a>.
   </p>
 
   <h4><code>X-Imap-Host</code></h4>
@@ -81,7 +81,7 @@
     <code>true|false</code>
   </p>
   <p>
-    optional, Standard: false
+    <em>optional</em>, Standard: false
   </p>
   <p>
     Should the connection be established over TLS.
@@ -90,7 +90,7 @@
 
   <h4><code>X-Imap-Servername</code></h4>
   <p>
-    optional
+    <em>optional</em>
   </p>
   <p>
     Servername for SNI (or when host is set to an IP address).
@@ -101,9 +101,9 @@
     Username for plain-text authentication.
   </p>
 
-  <h4><code>X-Imap-Password</code></h4>
+  <h4><code>X-Imap-Pass</code></h4>
   <p>
-    optional
+    <em>optional</em>
   </p>
   <p>
     Password for plain-text authentication.
@@ -111,27 +111,15 @@
 
   <h4><code>X-Imap-Access-Token</code></h4>
   <p>
-    optional
+    <em>optional</em>
   </p>
   <p>
     OAuth2 Access Token, if using OAuth2 authentication.
   </p>
 
-  <h4><code>X-Imap-XXX</code></h4>
-  <p>
-    XXX
-  </p>
+  <h4>Headers Example</h4>
 
-  <h4><code>X-Imap-XXX</code></h4>
-  <p>
-    XXX
-  </p>
-
-  <h4><code>X-Imap-XXX</code></h4>
-  <p>
-    XXX
-  </p>
-
+  <pre><code>{ headersExample }</code></pre>
 
 </article>
 <!-- HTTP Header END -->
