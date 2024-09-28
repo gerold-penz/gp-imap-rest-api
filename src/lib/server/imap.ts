@@ -7,13 +7,16 @@ export async function getMailboxes(options: ImapFlowOptions): Promise<MailboxInf
 
     const client = new ImapFlow(options)
     await client.connect()
-    const listResponse = await client.list()
-    await client.logout()
-    let mailboxes: MailboxInfo[] = listResponse.map(mailbox => {
-        return {...mailbox, flags: Array.from(mailbox.flags)}
-    })
-    mailboxes.sort((a, b) => a.path > b.path ? 1 : -1)
-    return mailboxes
+    try {
+        const listResponse = await client.list()
+        let mailboxes: MailboxInfo[] = listResponse.map(mailbox => {
+            return {...mailbox, flags: Array.from(mailbox.flags)}
+        })
+        mailboxes.sort((a, b) => a.path > b.path ? 1 : -1)
+        return mailboxes
+    } finally {
+        await client.logout()
+    }
 }
 
 
@@ -22,9 +25,12 @@ export async function getMessageUids(options: ImapFlowOptions, mailboxName: stri
 
     const client = new ImapFlow(options)
     await client.connect()
-    await client.mailboxOpen(mailboxName, {readOnly: true})
-    const uids = await client.search({deleted: false}, {uid: true})
-    await client.mailboxClose()
-    await client.logout()
-    return uids
+    try {
+        await client.mailboxOpen(mailboxName, {readOnly: true})
+        const uids = await client.search({deleted: false}, {uid: true})
+        await client.mailboxClose()
+        return uids
+    } finally {
+        await client.logout()
+    }
 }
