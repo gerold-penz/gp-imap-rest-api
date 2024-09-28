@@ -1,2 +1,2 @@
-# Bun-Imap-Rest-Api
+# Gp-Imap-Rest-Api
 

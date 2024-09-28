@@ -1,6 +1,6 @@
 {
-	"name": "bun-imap-rest-api",
-	"version": "0.0.17",
+	"name": "gp-imap-rest-api",
+	"version": "0.1.1",
 	"private": false,
 	"author": {
 		"name": "Gerold Penz",
@@ -9,29 +9,29 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gerold-penz/bun-imap-rest-api.git"
+		"url": "git+https://github.com/gerold-penz/gp-imap-rest-api.git"
 	},
 	"devDependencies": {
 		"@picocss/pico": "^2.0.6",
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/kit": "^2.6.1",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.7",
 		"@types/bun": "latest",
 		"@types/node-imap": "^0.9.3",
 		"http-status-codes": "^2.3.0",
 		"mailparser": "^3.7.1",
 		"node-imap": "^0.9.6",
-		"sass": "^1.79.3",
-		"svelte": "^5.0.0-next.1",
+		"sass": "^1.79.4",
+		"svelte": "^5.0.0-next.260",
 		"svelte-adapter-bun": "^0.5.2",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3",
+		"svelte-check": "^4.0.4",
+		"typescript": "^5.6.2",
+		"vite": "^5.4.8",
 		"zod": "^3.23.8",
 		"zod-form-data": "^2.0.2"
 	},
 	"bugs": {
-		"url": "https://github.com/gerold-penz/bun-imap-rest-api/issues"
+		"url": "https://github.com/gerold-penz/gp-imap-rest-api/issues"
 	},
 	"description": "IMAP REST API with Bun und SvelteKit",
 	"keywords": [
@@ -52,7 +52,7 @@
 		"build:vite": "bun --bun vite build",
 		"build": "bun run increment_package_version && bun run build:vite",
 		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
-		"deploy": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/bun-imap-rest-api:latest --push .",
+		"deploy": "docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:latest --push .",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},

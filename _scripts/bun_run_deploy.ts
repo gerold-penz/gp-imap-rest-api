@@ -7,7 +7,7 @@ $.cwd(join(__dirname, ".."))
 
 let exitCode = 1
 try {
-    exitCode = (await $`bun run build:docker`).exitCode
+    exitCode = (await $`bun run deploy`).exitCode
 } finally {
     if (exitCode !== 0) {
         prompt("\nPress ENTER to exit.")
