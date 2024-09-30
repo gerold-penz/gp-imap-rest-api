@@ -336,6 +336,6 @@ curl --request GET \
 
 ![N8N workflow](images/n8n-workflow.png)
 
-The "Get parsed message" node ist the HTML request which 
+The "Get parsed message" node is the HTML request which 
 uses the Gp-Imap-Rest-Api to fetch the attachments.
 
