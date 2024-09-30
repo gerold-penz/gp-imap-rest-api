@@ -1,6 +1,19 @@
 # Gp-Imap-Rest-Api
 
-https://github.com/gerold-penz/gp-imap-rest-api
+This is a small program that can be executed via Docker. 
+The calls are passed as HTTP requests.
+The return is always a JSON string.
+This program is based on the wonderful work of 
+[ImapFlow](https://github.com/postalsys/imapflow) and 
+[Postal-Mime](https://github.com/postalsys/postal-mime).
+
+What can the program do so far?
+
+- List all IMAP mailboxes.
+- List the UIDs of all messages in a mailbox.
+- Parse and return a message including attachments (Base64 encoded).
+
+This is all the program can do at the moment, but further functions are planned.
 
 
 ## Docker-Compose File
