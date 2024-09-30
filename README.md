@@ -331,3 +331,11 @@ curl --request GET \
   --header 'X-Imap-User: exampleuser@example.com' \
   --header 'X-Imap-Pass: examplePassword123'
 ```
+
+## Usage inside a N8N workflow
+
+![N8N workflow](images/n8n-workflow.png)
+
+The "Get parsed message" ist the HTML request node which 
+uses the Gp-Imap-Rest-Api to fetch the attachments.
+
