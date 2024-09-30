@@ -1,4 +1,5 @@
-import type { ListResponse, FetchMessageObject, MessageEnvelopeObject, MessageStructureObject } from "imapflow"
+import type { ListResponse, MessageEnvelopeObject, MessageStructureObject } from "imapflow"
+import type { Attachment, Email } from "postal-mime"
 
 
 export interface MailboxInfo extends Omit<ListResponse, "flags"> {
@@ -6,10 +7,9 @@ export interface MailboxInfo extends Omit<ListResponse, "flags"> {
 }
 
 
-export interface FetchMessage {
+export interface FetchedMessage {
     seq?: number
     uid?: number
-    source?: string
     modseq?: number
     emailId?: string
     threadId?: string
@@ -18,9 +18,19 @@ export interface FetchMessage {
     flags?: string[]
     envelope?: MessageEnvelopeObject
     bodyStructure?: MessageStructureObject
-    internalDate?: Date
     bodyParts?: {[key: string]: string}
     headers?: string
     id?: string
+    parsed?: any
+    raw?: string
 }
 
+export interface ParsedAttachment extends Omit<Attachment, "content"> {
+    content?: ArrayBuffer;
+    contentBase64?: string
+}
+
+
+export interface ParsedEmail extends Omit<Email, "attachments"> {
+    attachments: ParsedAttachment[]
+}

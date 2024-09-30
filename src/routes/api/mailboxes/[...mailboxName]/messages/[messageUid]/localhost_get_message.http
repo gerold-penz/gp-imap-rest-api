@@ -1,5 +1,5 @@
 ### GET request to example server
-GET http://localhost:8080/api/mailboxes/INBOX/messages/17563
+GET http://localhost:8080/api/mailboxes/INBOX/messages/17701
 X-Imap-Host: {{IMAP_HOST}}
 X-Imap-Port: {{IMAP_PORT}}
 X-Imap-Secure: {{IMAP_SECURE}}
@@ -7,10 +7,15 @@ X-Imap-User: {{IMAP_USER}}
 X-Imap-Pass: {{IMAP_PASS}}
 
 
-#  "uids": [
+#"uids": [
 #    17563,
-#    17670,
 #    17684,
 #    17685,
-#    17686
+#    17686,
+#    17701, A1 Rechnung
+#    17703,
+#    17704,
+#    17711,
+#    17712,
+#    17713
 #  ],
