@@ -1,5 +1,5 @@
 import { ImapFlow } from "imapflow"
-import type { FetchMessageObject, ImapFlowOptions, MessageStructureObject } from "imapflow"
+import type { FetchMessageObject, ImapFlowOptions } from "imapflow"
 import type { FetchedMessage, MailboxInfo, ParsedEmail } from "$lib/interfaces"
 import PostalMime from "postal-mime"
 

@@ -285,3 +285,36 @@ _Response:_
   "total": 8
 }
 ```
+
+
+### Get message
+
+```http
+GET https://<Server URL>/api/mailboxes/<Mailbox Path>/<Message UID>
+X-Imap-Host: <IMAP_HOST>
+X-Imap-Port: <IMAP_PORT>
+X-Imap-Secure: <IMAP_SECURE>
+X-Imap-User: <IMAP_USER>
+X-Imap-Pass: <IMAP_PASS>
+```
+
+#### Example
+
+```http request
+GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/1234
+X-Imap-Host: imap.example.com
+X-Imap-Port: 993
+X-Imap-Secure: true
+X-Imap-User: exampleuser@example.com
+X-Imap-Pass: examplePassword123
+```
+
+```shell
+curl --request GET \
+  --url https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/1234 \
+  --header 'X-Imap-Host: imap.example.com' \
+  --header 'X-Imap-Port: 993' \
+  --header 'X-Imap-Secure: true' \
+  --header 'X-Imap-User: exampleuser@example.com' \
+  --header 'X-Imap-Pass: examplePassword123'
+```
