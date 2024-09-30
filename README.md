@@ -97,7 +97,7 @@ OAuth2 Access Token, if using OAuth2 authentication.
 
 ### Get all mailboxes
 
-```http request
+```http
 GET https://<Server URL>/api/mailboxes/
 X-Imap-Host: <IMAP_HOST>
 X-Imap-Port: <IMAP_PORT>
@@ -237,7 +237,7 @@ _Response:_
 
 ### Get all message UIDs of one mailbox
 
-```http request
+```http
 GET https://<Server URL>/api/mailboxes/<Mailbox Path>
 X-Imap-Host: <IMAP_HOST>
 X-Imap-Port: <IMAP_PORT>
@@ -283,4 +283,5 @@ _Response:_
     17711
   ],
   "total": 8
-}```
+}
+```
