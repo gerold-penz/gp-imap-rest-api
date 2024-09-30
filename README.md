@@ -36,7 +36,7 @@ If HTTPS is used, the header is transmitted to the server in encrypted form.
 
 The header entries required for this all start with `X-Imap-`.
 
-### Headers
+### X-Imap Headers
 
 Descriptions taken from the 
 [documentation of ImapFlow](https://imapflow.com/module-imapflow-ImapFlow.html)
