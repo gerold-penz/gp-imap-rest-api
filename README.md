@@ -1,5 +1,7 @@
 # Gp-Imap-Rest-Api
 
+https://github.com/gerold-penz/gp-imap-rest-api
+
 
 ## Docker-Compose File
 
@@ -28,10 +30,9 @@ with IMAP credentials
 
 Every HTTP request to the “Gp-Imap-Rest-Api Server” must contain the 
 access data to the IMAP server.
-To ensure that this is not transferred in plain text via the URL, 
+To ensure that this is not transferred in plain text, 
 this access data must be transferred in the HTTP header.
-If HTTPS is used instead of HTTP, the header is transmitted 
-to the server in encrypted form.
+If HTTPS is used, the header is transmitted to the server in encrypted form.
 
 The header entries required for this all start with `X-Imap-`.
 
