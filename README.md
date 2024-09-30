@@ -39,7 +39,16 @@ The header entries required for this all start with `X-Imap-`.
 ### Headers
 
 Descriptions taken from the 
-<a href=“https://imapflow.com/module-imapflow-ImapFlow.html” target=“_blank”>documentation of ImapFlow</a>.
+[documentation of ImapFlow](https://imapflow.com/module-imapflow-ImapFlow.html)
+
+_Example:_
+```http request
+X-Imap-Host: imap.example.com
+X-Imap-Port: 993
+X-Imap-Secure: true
+X-Imap-User: exampleuser@example.com
+X-Imap-Pass: examplePassword123
+```
 
 #### `X-Imap-Host`
 
@@ -81,14 +90,4 @@ Password for plain-text authentication.
 _optional_
 
 OAuth2 Access Token, if using OAuth2 authentication.
-
-#### Headers Example
-
-```http request
-X-Imap-Host: imap.example.com
-X-Imap-Port: 993
-X-Imap-Secure: true
-X-Imap-User: exampleuser@example.com
-X-Imap-Pass: examplePassword123
-```
 
