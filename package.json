@@ -45,7 +45,8 @@
 		"Api",
 		"Server",
 		"Docker",
-		"SvelteKit"
+		"SvelteKit",
+		"ImapFlow"
 	],
 	"license": "MIT",
 	"scripts": {
