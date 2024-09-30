@@ -287,10 +287,10 @@ _Response:_
 ```
 
 
-### Get message
+### Get parsed message with attachments
 
 ```http
-GET https://<Server URL>/api/mailboxes/<Mailbox Path>/<Message UID>
+GET https://<Server URL>/api/mailboxes/<Mailbox Path>/messages/<Message UID>
 X-Imap-Host: <IMAP_HOST>
 X-Imap-Port: <IMAP_PORT>
 X-Imap-Secure: <IMAP_SECURE>
@@ -301,7 +301,7 @@ X-Imap-Pass: <IMAP_PASS>
 #### Example
 
 ```http request
-GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/1234
+GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/messages/1234
 X-Imap-Host: imap.example.com
 X-Imap-Port: 993
 X-Imap-Secure: true
@@ -311,7 +311,7 @@ X-Imap-Pass: examplePassword123
 
 ```shell
 curl --request GET \
-  --url https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/1234 \
+  --url https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/messages/1234 \
   --header 'X-Imap-Host: imap.example.com' \
   --header 'X-Imap-Port: 993' \
   --header 'X-Imap-Secure: true' \
