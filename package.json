@@ -1,6 +1,6 @@
 {
 	"name": "gp-imap-rest-api",
-	"version": "0.1.9",
+	"version": "1.0.0",
 	"private": false,
 	"author": {
 		"name": "Gerold Penz",
@@ -46,7 +46,8 @@
 		"Server",
 		"Docker",
 		"SvelteKit",
-		"ImapFlow"
+		"ImapFlow",
+		"postal-mime"
 	],
 	"license": "MIT",
 	"scripts": {
