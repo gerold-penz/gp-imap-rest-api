@@ -147,23 +147,6 @@ _Response:_
   "success": true,
   "mailboxes": [
     {
-      "path": "Drafts",
-      "pathAsListed": "Drafts",
-      "flags": [
-        "\\HasNoChildren",
-        "\\UnMarked",
-        "\\Drafts"
-      ],
-      "delimiter": "/",
-      "listed": true,
-      "parentPath": "",
-      "parent": [],
-      "name": "Drafts",
-      "subscribed": true,
-      "specialUse": "\\Drafts",
-      "specialUseSource": "extension"
-    },
-    {
       "path": "INBOX",
       "pathAsListed": "INBOX",
       "flags": [
@@ -177,23 +160,6 @@ _Response:_
       "subscribed": true,
       "specialUse": "\\Inbox",
       "specialUseSource": "name"
-    },
-    {
-      "path": "Junk",
-      "pathAsListed": "Junk",
-      "flags": [
-        "\\HasNoChildren",
-        "\\UnMarked",
-        "\\Junk"
-      ],
-      "delimiter": "/",
-      "listed": true,
-      "parentPath": "",
-      "parent": [],
-      "name": "Junk",
-      "subscribed": true,
-      "specialUse": "\\Junk",
-      "specialUseSource": "extension"
     },
     {
       "path": "Sent",
@@ -210,37 +176,6 @@ _Response:_
       "name": "Sent",
       "subscribed": true,
       "specialUse": "\\Sent",
-      "specialUseSource": "extension"
-    },
-    {
-      "path": "Templates",
-      "pathAsListed": "Templates",
-      "flags": [
-        "\\HasNoChildren",
-        "\\UnMarked"
-      ],
-      "delimiter": "/",
-      "listed": true,
-      "parentPath": "",
-      "parent": [],
-      "name": "Templates",
-      "subscribed": true
-    },
-    {
-      "path": "Trash",
-      "pathAsListed": "Trash",
-      "flags": [
-        "\\HasNoChildren",
-        "\\UnMarked",
-        "\\Trash"
-      ],
-      "delimiter": "/",
-      "listed": true,
-      "parentPath": "",
-      "parent": [],
-      "name": "Trash",
-      "subscribed": true,
-      "specialUse": "\\Trash",
       "specialUseSource": "extension"
     }
   ]
