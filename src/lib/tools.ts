@@ -11,6 +11,7 @@ export function parseHeaders(headers: Headers) {
             user: headers.get("X-Imap-User"),
             pass: headers.get("X-Imap-Pass"),
             accessToken: headers.get("X-Imap-Access-Token"),
-        }
+        },
+        // debug: (headers.get("X-Debug") || "false").toLowerCase() === "true" || null,
     })
 }
