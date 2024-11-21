@@ -1,3 +1,4 @@
+declare const PACKAGE: {name: string, version: string}  // Variablen aus package.json (über vite.config.ts eingefügt)
 import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
 import { getMessageUids } from "$lib/server/imap"
@@ -22,7 +23,9 @@ export const GET: RequestHandler = async ({request, params}) => {
             success: false,
             error: true,
             error_code: StatusCodes.BAD_REQUEST,
-            error_message: parseError.message
+            error_message: parseError.message,
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     }
 
@@ -32,14 +35,18 @@ export const GET: RequestHandler = async ({request, params}) => {
         return json({
             success: true,
             uids,
-            total: uids.length
+            total: uids.length,
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     } catch (error: any) {
         return json({
             success: false,
             error: true,
             error_code: StatusCodes.INTERNAL_SERVER_ERROR,
-            error_message: error.toString()
+            error_message: error.toString(),
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     }
 

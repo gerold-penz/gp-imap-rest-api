@@ -1,3 +1,4 @@
+declare const PACKAGE: {name: string, version: string}  // Variablen aus package.json (über vite.config.ts eingefügt)
 import { json } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
 import { StatusCodes } from "http-status-codes"
@@ -22,7 +23,9 @@ export const GET: RequestHandler = async ({request}) => {
             success: false,
             error: true,
             error_code: StatusCodes.BAD_REQUEST,
-            error_message: parseError.message
+            error_message: parseError.message,
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     }
 
@@ -31,14 +34,18 @@ export const GET: RequestHandler = async ({request}) => {
         const mailboxes: MailboxInfo[] = await getMailboxes(imapOptions as ImapFlowOptions)
         return json({
             success: true,
-            mailboxes
+            mailboxes,
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     } catch (error: any) {
         return json({
             success: false,
             error: true,
             error_code: StatusCodes.INTERNAL_SERVER_ERROR,
-            error_message: error.toString()
+            error_message: error.toString(),
+            api_name: PACKAGE.name,
+            api_version: PACKAGE.version
         })
     }
 
