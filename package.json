@@ -56,7 +56,7 @@
 		"build:vite": "bun --bun vite build",
 		"build": "bun run build:vite",
 		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
-		"deploy:github": "docker buildx build --pull --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:latest -t ghcr.io/gerold-penz/gp-imap-rest-api:$npm_package_version --push .",
+		"deploy:github": "short_version=$(echo $npm_package_version | cut -d. -f1,2) && docker buildx build --pull --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:$short_version -t ghcr.io/gerold-penz/gp-imap-rest-api:$npm_package_version -t ghcr.io/gerold-penz/gp-imap-rest-api:latest --push .",
 		"deploy:forgejo": "docker buildx build --pull --platform 'linux/amd64,linux/arm64' -t forgejo.gerold-penz.at/gp/gp-imap-rest-api --push ./",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
