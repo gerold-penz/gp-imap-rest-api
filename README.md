@@ -63,46 +63,80 @@ X-Imap-User: exampleuser@example.com
 X-Imap-Pass: examplePassword123
 ```
 
-#### `X-Imap-Host`
+#### X-Imap-Host
 
 Hostname of the IMAP server
 
-#### `X-Imap-Port`
+
+#### X-Imap-Port
 
 Port number for the IMAP server
 
-#### `X-Imap-Secure`
+
+#### X-Imap-Secure
 
 `true|false`
 
-_optional_, Standard: false
+_optional_, Default: false
 
 Should the connection be established over TLS.
 If `false` then connection is upgraded to TLS using STARTTLS 
 extension before authentication.
 
-#### `X-Imap-Servername`
+
+#### X-Imap-Servername
 
 _optional_
 
 Servername for SNI (or when host is set to an IP address).
 
 
-#### `X-Imap-User`
+#### X-Imap-Disable-Compression
+
+`true|false`
+
+_optional_, Default: false
+
+If `true` then client does not try to use COMPRESS=DEFLATE extension.
+
+
+#### X-Imap-User
 
 Username for plain-text authentication.
 
-#### `X-Imap-Pass`
+
+#### X-Imap-Pass
 
 _optional_
 
 Password for plain-text authentication.
 
-#### `X-Imap-Access-Token`
+
+#### X-Imap-Access-Token
 
 _optional_
 
 OAuth2 Access Token, if using OAuth2 authentication.
+
+
+#### X-Imap-Disable-Auto-Idle
+
+`true|false`
+
+_optional_, Default: false
+
+If `true` then IDLE is not started automatically.
+Useful if you only need to perform specific tasks over the connection
+
+
+#### X-Imap-Tls-Reject-Unauthorized
+
+`true|false`
+
+_optional_, Default: true
+
+If `false` then client accepts self-signed and expired 
+certificates from the server.
 
 
 ## Usage
