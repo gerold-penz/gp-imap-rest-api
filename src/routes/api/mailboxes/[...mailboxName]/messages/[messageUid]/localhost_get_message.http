@@ -1,5 +1,5 @@
 ### GET request to example server
-GET http://localhost:8080/api/mailboxes/INBOX/messages/17701
+GET http://localhost:8080/api/mailboxes/INBOX/messages/6
 X-Imap-Host: {{IMAP_HOST}}
 X-Imap-Port: {{IMAP_PORT}}
 X-Imap-Secure: {{IMAP_SECURE}}

@@ -1,0 +1,6 @@
+GET http://localhost:8080/api/
+X-Imap-Host: {{IMAP_HOST}}
+X-Imap-Port: {{IMAP_PORT}}
+X-Imap-Secure: {{IMAP_SECURE}}
+X-Imap-User: {{IMAP_USER}}
+X-Imap-Pass: {{IMAP_PASS}}

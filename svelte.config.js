@@ -7,8 +7,9 @@ const config = {
 
     kit: {
         adapter: adapter({development: true}),
-        csrf: {checkOrigin: false}
-    }
+        csrf: {checkOrigin: false},
+    },
+
 }
 
 export default config

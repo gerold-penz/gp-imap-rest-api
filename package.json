@@ -1,65 +1,65 @@
 {
-	"name": "gp-imap-rest-api",
-	"version": "1.2.1",
-	"private": false,
-	"author": {
-		"name": "Gerold Penz",
-		"email": "gerold@gp-softwaretechnik.at",
-		"url": "https://gp-softwaretechnik.at/"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/gerold-penz/gp-imap-rest-api.git"
-	},
-	"devDependencies": {
-		"@picocss/pico": "^2.0.6",
-		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/kit": "^2.8.1",
-		"@sveltejs/vite-plugin-svelte": "^4.0.1",
-		"@types/bun": "latest",
-		"@types/imapflow": "^1.0.19",
-		"@types/mailparser": "^3.4.5",
-		"@types/node-imap": "^0.9.3",
-		"http-status-codes": "^2.3.0",
-		"imapflow": "1.0.164",
-		"postal-mime": "^2.3.2",
-		"sass": "^1.81.0",
-		"svelte": "^5.2.4",
-		"svelte-adapter-bun": "^0.5.2",
-		"svelte-check": "^4.0.9",
-		"typescript": "^5.6.3",
-		"vite": "^5.4.11",
-		"zod": "^3.23.8",
-		"zod-form-data": "^2.0.2"
-	},
-	"bugs": {
-		"url": "https://github.com/gerold-penz/gp-imap-rest-api/issues"
-	},
-	"description": "IMAP REST API with Bun und SvelteKit",
-	"keywords": [
-		"Bun",
-		"Bun.js",
-		"TypeScript",
-		"Imap",
-		"Rest",
-		"Api",
-		"Server",
-		"Docker",
-		"SvelteKit",
-		"ImapFlow",
-		"postal-mime"
-	],
-	"license": "MIT",
-	"scripts": {
-		"dev": "bun --bun vite dev --host=0.0.0.0 --port=8080 --strictPort",
-		"incr_version": "npm version patch --no-git-tag-version",
-		"build:vite": "bun --bun vite build",
-		"build": "bun run build:vite",
-		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
-		"deploy:github": "short_version=$(echo $npm_package_version | cut -d. -f1,2) && docker buildx build --pull --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:$short_version -t ghcr.io/gerold-penz/gp-imap-rest-api:$npm_package_version -t ghcr.io/gerold-penz/gp-imap-rest-api:latest --push .",
-		"deploy:forgejo": "docker buildx build --pull --platform 'linux/amd64,linux/arm64' -t forgejo.gerold-penz.at/gp/gp-imap-rest-api --push ./",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"type": "module"
+  "name": "gp-imap-rest-api",
+  "version": "1.2.21",
+  "author": {
+    "name": "Gerold Penz",
+    "email": "gerold@gp-softwaretechnik.at",
+    "url": "https://gp-softwaretechnik.at/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerold-penz/gp-imap-rest-api.git"
+  },
+  "devDependencies": {
+    "@picocss/pico": "^2.0.6",
+    "@sveltejs/adapter-auto": "^3.3.1",
+    "@sveltejs/kit": "^2.8.1",
+    "@sveltejs/vite-plugin-svelte": "^4.0.1",
+    "@types/bun": "latest",
+    "@types/imapflow": "^1.0.19",
+    "@types/mailparser": "^3.4.5",
+    "@types/node-imap": "^0.9.3",
+    "http-status-codes": "^2.3.0",
+    "imapflow": "1.0.164",
+    "postal-mime": "^2.3.2",
+    "sass": "^1.81.0",
+    "svelte": "^5.2.4",
+    "svelte-adapter-bun": "^0.5.2",
+    "svelte-check": "^4.0.9",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "zod": "^3.23.8",
+    "zod-form-data": "^2.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/gerold-penz/gp-imap-rest-api/issues"
+  },
+  "description": "IMAP REST API with Bun und SvelteKit",
+  "keywords": [
+    "Bun",
+    "Bun.js",
+    "TypeScript",
+    "Imap",
+    "Rest",
+    "Api",
+    "Server",
+    "Docker",
+    "SvelteKit",
+    "ImapFlow",
+    "postal-mime"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "bun --bun vite dev --host=0.0.0.0 --port=8080 --strictPort",
+    "incr_version": "npm version patch --no-git-tag-version",
+    "build:vite": "bun --bun run vite build",
+    "build": "bun run build:vite",
+    "preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
+    "deploy:github": "short_version=$(echo $npm_package_version | cut -d. -f1,2) && docker buildx build --no-cache --pull --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:$short_version -t ghcr.io/gerold-penz/gp-imap-rest-api:$npm_package_version -t ghcr.io/gerold-penz/gp-imap-rest-api:latest --push .",
+    "deploy:forgejo": "docker buildx build --pull --platform 'linux/amd64,linux/arm64' -t forgejo.gerold-penz.at/gp/gp-imap-rest-api --push ./",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "type": "module"
 }

@@ -10,5 +10,8 @@ export default defineConfig({
             "name": process.env.npm_package_name,
             "version": process.env.npm_package_version,
         },
+    },
+    optimizeDeps: {
+        exclude: ["imapflow"]
     }
 })

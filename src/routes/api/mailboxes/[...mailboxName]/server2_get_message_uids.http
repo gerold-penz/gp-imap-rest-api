@@ -1,0 +1,7 @@
+### GET request to example server
+GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX
+X-Imap-Host: {{IMAP_HOST}}
+X-Imap-Port: {{IMAP_PORT}}
+X-Imap-Secure: {{IMAP_SECURE}}
+X-Imap-User: {{IMAP_USER}}
+X-Imap-Pass: {{IMAP_PASS}}
