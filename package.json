@@ -21,7 +21,7 @@
 		"@types/mailparser": "^3.4.5",
 		"@types/node-imap": "^0.9.3",
 		"http-status-codes": "^2.3.0",
-		"imapflow": "^1.0.169",
+		"imapflow": "1.0.164",
 		"postal-mime": "^2.3.2",
 		"sass": "^1.81.0",
 		"svelte": "^5.2.4",
