@@ -1,6 +1,6 @@
 {
 	"name": "gp-imap-rest-api",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"private": false,
 	"author": {
 		"name": "Gerold Penz",
@@ -52,9 +52,9 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "bun --bun vite dev --host=0.0.0.0 --port=8080 --strictPort",
-		"increment_package_version": "npm version patch --no-git-tag-version",
+		"incr_version": "npm version patch --no-git-tag-version",
 		"build:vite": "bun --bun vite build",
-		"build": "bun run increment_package_version && bun run build:vite",
+		"build": "bun run build:vite",
 		"preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort",
 		"deploy:github": "docker buildx build --pull --platform linux/amd64,linux/arm64 -t ghcr.io/gerold-penz/gp-imap-rest-api:latest -t ghcr.io/gerold-penz/gp-imap-rest-api:$npm_package_version --push .",
 		"deploy:forgejo": "docker buildx build --pull --platform 'linux/amd64,linux/arm64' -t forgejo.gerold-penz.at/gp/gp-imap-rest-api --push ./",
