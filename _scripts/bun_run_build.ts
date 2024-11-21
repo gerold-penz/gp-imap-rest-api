@@ -6,6 +6,7 @@ import { join } from "node:path"
 $.cwd(join(__dirname, ".."))
 
 let exitCode = 1
+
 try {
     exitCode = (await $`bun run incr_version`).exitCode
 } finally {
