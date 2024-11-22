@@ -3,9 +3,8 @@ LABEL maintainer="Gerold Penz - <gerold@gp-softwaretechnik.at>"
 
 WORKDIR /home/bun/app
 
+ADD /node_modules ./node_modules
 ADD /build ./
-
-#RUN bun add --global --exact imapflow@1.0.164
-#RUN bun add imapflow@1.0.164
+ADD /package.json ./
 
 CMD bun --bun start

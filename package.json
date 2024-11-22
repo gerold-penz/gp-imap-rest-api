@@ -1,6 +1,6 @@
 {
   "name": "gp-imap-rest-api",
-  "version": "1.2.21",
+  "version": "1.2.22",
   "author": {
     "name": "Gerold Penz",
     "email": "gerold@gp-softwaretechnik.at",
@@ -51,6 +51,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "start": "bun --bun ./index.js",
     "dev": "bun --bun vite dev --host=0.0.0.0 --port=8080 --strictPort",
     "incr_version": "npm version patch --no-git-tag-version",
     "build:vite": "bun --bun run vite build",

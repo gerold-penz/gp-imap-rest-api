@@ -22,11 +22,3 @@ try {
         prompt("\nPress ENTER to exit.")
     }
 }
-
-try {
-    exitCode = (await $`cp --recursive node_modules build`).exitCode
-} finally {
-    if (exitCode !== 0) {
-        prompt("\nPress ENTER to exit.")
-    }
-}
