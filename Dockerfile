@@ -3,10 +3,13 @@ LABEL maintainer="Gerold Penz - <gerold@gp-softwaretechnik.at>"
 
 WORKDIR /home/bun/app
 
-# ADD /node_modules ./node_modules
+# Add files to container
 ADD /build ./
 ADD /package.json ./
+ADD /bunfig.toml ./
 
-RUN bun install --production --exact
+# Install dependencies (including devDependencies)
+RUN ["bun", "install"]
 
-CMD bun --bun start
+# Define start command
+CMD ["bun", "--bun", "start"]
