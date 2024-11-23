@@ -1,15 +1,12 @@
 #!/usr/bin/env bun
 import { $ } from "bun"
-import { join, resolve } from "node:path"
+import { join } from "node:path"
 import { version } from "../package.json"
 
 
 const [major, minor, patch] = version.split(".")
 
-
-$.cwd(resolve(join(__dirname, "..")))
-
-
+$.cwd(join(__dirname, ".."))
 let exitCode = 1
 try {
     exitCode = (await $` 

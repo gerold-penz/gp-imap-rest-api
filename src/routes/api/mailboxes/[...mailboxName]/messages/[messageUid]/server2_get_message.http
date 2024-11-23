@@ -1,0 +1,21 @@
+### GET request to example server
+GET https://gp-imap-rest-api.gerold-penz.at/api/mailboxes/INBOX/messages/6
+X-Imap-Host: {{IMAP_HOST}}
+X-Imap-Port: {{IMAP_PORT}}
+X-Imap-Secure: {{IMAP_SECURE}}
+X-Imap-User: {{IMAP_USER}}
+X-Imap-Pass: {{IMAP_PASS}}
+
+
+#"uids": [
+#    17563,
+#    17684,
+#    17685,
+#    17686,
+#    17701, A1 Rechnung
+#    17703,
+#    17704,
+#    17711,
+#    17712,
+#    17713
+#  ],
