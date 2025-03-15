@@ -1,6 +1,6 @@
 FROM oven/bun:alpine
-LABEL maintainer = "Gerold Penz - <gerold@gp-softwaretechnik.at>"
-LABEL org.opencontainers.image.description = "IMAP REST API with Bun und SvelteKit"
+LABEL maintainer="Gerold Penz - <gerold@gp-softwaretechnik.at>"
+LABEL org.opencontainers.image.description="IMAP REST API with Bun und SvelteKit"
 
 WORKDIR /home/bun/app
 
