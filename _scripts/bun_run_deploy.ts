@@ -6,7 +6,7 @@ import { version } from "../package.json"
 
 const [major, minor, patch] = version.split(".")
 
-$.cwd(join(__dirname, ".."))
+$.cwd(join(import.meta.dir, ".."))
 let exitCode = 1
 try {
     exitCode = (await $` 

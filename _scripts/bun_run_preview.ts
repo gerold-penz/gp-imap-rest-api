@@ -3,7 +3,7 @@ import { $ } from "bun"
 import { join } from "node:path"
 
 
-$.cwd(join(__dirname, ".."))
+$.cwd(join(import.meta.dir, ".."))
 $.env({FORCE_COLOR: "1"})
 
 let exitCode = 1

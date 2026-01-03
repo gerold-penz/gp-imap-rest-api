@@ -3,6 +3,6 @@ import { $ } from "bun"
 import { join } from "node:path"
 
 
-$.cwd(join(__dirname, ".."))
+$.cwd(join(import.meta.dir, ".."))
 
-await $`bun run increment_package_version`
+await $`bun run incr_version`
