@@ -54,7 +54,7 @@
   "scripts": {
     "start": "bun --bun ./index.js",
     "dev": "bun --bun vite dev --host=0.0.0.0 --port=8080 --strictPort",
-    "incr_version": "npm version patch --no-git-tag-version",
+		"incr_version": "bun pm version patch --no-git-tag-version",
     "build:vite": "bun --bun run vite build",
     "build": "bun run build:vite",
     "preview": "bun --bun vite preview --host=0.0.0.0 --port=8080 --strictPort"
